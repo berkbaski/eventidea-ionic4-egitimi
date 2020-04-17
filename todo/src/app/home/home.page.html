@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Yapilacaklar listesi
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+
+    <ion-row class="ion-margin-bottom">
+      <ion-col>
+        <ion-item class="ion-no-padding">
+          <ion-label position="floating">
+            Yapilacaklar listesine ekle
+          </ion-label>
+          <ion-textarea [(ngModel)]="todoText" (keyup.enter)="addTodo()"></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-list *ngIf="todoList.length > 0">
+      <ion-list-header>
+        Yapilacaklar listesi
+      </ion-list-header>
+      <ion-item *ngFor="let todo of todoList; let i = index">
+        <ion-label class="ion-text-wrap">{{todo}}</ion-label>
+        <ion-fab-button size="small" color="danger" (click)="deleteTodo(i)">sil</ion-fab-button>
+      </ion-item>
+    </ion-list>
+
+    <ion-row *ngIf="todoList.length == 0">
+      <ion-col size="12" class="center-in-item">
+        <ion-img src="../../assets/empty-state.svg" class="es-photo"></ion-img>
+      </ion-col>
+      <ion-col size="12">
+        <h5 class="ion-text-center">
+          Yapilacaklar listesi bos!
+        </h5>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

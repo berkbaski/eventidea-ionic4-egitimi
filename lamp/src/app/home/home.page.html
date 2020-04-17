@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="isLampOn">Lamba yaniyor</ion-title>
+    <ion-title *ngIf="!isLampOn">Lamba yanmiyor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="center-in-item">
+        <ion-button color="primary" (click)="turnOnLamp()">Lambayi yak</ion-button>
+      </ion-col>
+      <ion-col class="center-in-item">
+        <ion-button color="danger" (click)="turnOffLamp()">Lambayi sondur</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="center-in-item">
+        <div [ngClass]="{'lamp': isLampOn}"></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

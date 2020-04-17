@@ -1,0 +1,20 @@
+.center-in-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lamp {
+  width: 15vw;
+  height: 15vw;
+  background: #f1c40f;
+  border-radius: 7.5vw;
+
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: .5;
+  }
+}
